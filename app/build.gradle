@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.jiajun.kotlinexample"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    dataBinding {
+        enabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    def dependencies = rootProject.ext.dependencies
+
+    implementation dependencies.supportDesign
+    implementation dependencies.supportRecyclerview
+    implementation dependencies.supportCardView
+    implementation dependencies.supportMultidex
+
+//
+    implementation dependencies.rxJava
+    implementation dependencies.rxAndroid
+
+    implementation dependencies.gson
+    implementation dependencies.retrofit
+    implementation dependencies.retrofitRxjavaAdapter
+    implementation dependencies.retrofitGsonConverter
+    implementation dependencies.okhttp3
+    implementation dependencies.okhttpLoggingInterceptor
+
+    implementation dependencies.glide
+    implementation dependencies.dagger
+    kapt dependencies.daggerCompiler
+    compileOnly dependencies.javaxAnnotation
+
+    implementation dependencies.kotlinStdlib
+    implementation dependencies.kotlinReflect
+
+    //deep link
+    implementation 'com.airbnb:deeplinkdispatch:2.0.1'
+    annotationProcessor 'com.airbnb:deeplinkdispatch-processor:2.0.1'
+
+
+    implementation 'com.github.githubwing:ByeBurger:1.2.2'
+    annotationProcessor 'com.android.databinding:compiler:1.0-rc5'
+}
