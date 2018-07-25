@@ -20,5 +20,6 @@ data class Goods(
         return images.isEmpty()
     }
 
+
     fun create() = createdAt.substring(0, 10)
 }

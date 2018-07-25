@@ -6,6 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
+
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.jiajun.kotlinexample"
@@ -68,4 +69,7 @@ dependencies {
 
     implementation 'com.github.githubwing:ByeBurger:1.2.2'
     annotationProcessor 'com.android.databinding:compiler:1.0-rc5'
+
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+
 }
