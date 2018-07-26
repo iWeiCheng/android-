@@ -39,7 +39,7 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
                 R.id.menu_about -> tab = 3
             }
             viewPager.currentItem = tab
-            false
+            true
         }
         floatingButton.setOnClickListener {
             toast("hello")
