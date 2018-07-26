@@ -17,5 +17,6 @@ interface ApiComponent{
     fun inject(app: App)
 
     fun plus(module: GoodsModule):GoodsComponent
+    fun plus(module: RandomModule):RandomComponent
 
 }
